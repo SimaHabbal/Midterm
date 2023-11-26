@@ -97,3 +97,15 @@ def displayAllTabs():
     for nested in tab['Nested Tabs']:
         print("--" + nested['Title'])
 
+
+
+def openNestedTabs():
+  index = int(input("Enter the index of the tab you want to add a nested tab to it: "))
+  if 0 <= index <= len(tabList)-1:
+      title = input("Enter the title: ")
+      url = input("Enter the URL: ")
+      nested = {"Title": title, "URL": url}
+      tabList[index]["Nested Tabs"].append(nested)
+      print("Nested tab added successfully.")
+  else:
+      print("Invalid tab index.")
