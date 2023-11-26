@@ -1,3 +1,14 @@
+import json
+import os
+import requests
+from bs4 import BeautifulSoup
+
+tabList = []
+current_index = None
+
+
+
+
 def menu():
   print("Welcome to Sima's midterm answer.")
   print("Please select one of the following options from the menu:")
