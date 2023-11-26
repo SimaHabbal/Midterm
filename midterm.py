@@ -64,3 +64,12 @@ def closeTab():
     print("Tab closed successfully.")
   else:
     print("Invalid index.")
+
+
+
+def switchTab():
+  index = int(input("Enter the index of the tab to display: "))
+  if len(tabList) == 0:
+      print("No tabs to display.")
+      return
+  
