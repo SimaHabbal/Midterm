@@ -1,10 +1,11 @@
+#the modules and functionalities that i needed
 import json
 import os
 import requests
 from bs4 import BeautifulSoup
 
 tabList = []
-current_index = None
+#current_index = None
 
 def menu():
   print("Welcome to Sima's midterm answer.")
@@ -171,6 +172,7 @@ def importTabs(): # O(n) the content reads content of file and loads it
   f.seek(0)
   tabList = json.load(f)
 
+#the menu, which doesnt need any brain cells
 while True:
   menu()
   choice = input("Enter your choice: ")
