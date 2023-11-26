@@ -6,9 +6,6 @@ from bs4 import BeautifulSoup
 tabList = []
 current_index = None
 
-
-
-
 def menu():
   print("Welcome to Sima's midterm answer.")
   print("Please select one of the following options from the menu:")
@@ -22,18 +19,18 @@ def menu():
   print("8. Import Tabs")
   print("9. Exit")
 
-def selectionSort():
-  border=0
-  while border <len(tabList)-1:
-    minIndex=border 
-    for i in range(border+1, len(tabList)):
-      if tabList[i]['Title'].lower()<tabList[minIndex]['Title'].lower():
-        minIndex=i
-    temp=tabList[border]
-    tabList[border]=tabList[minIndex]
-    tabList[minIndex]=temp
-    border=border+1
 
+def selectionSort(): #O(n^2) n is the number of elements in list
+  border = 0
+  while border < len(tabList) - 1:
+    minIndex = border
+    for i in range(border + 1, len(tabList)):
+      if tabList[i]['Title'].lower() < tabList[minIndex]['Title'].lower():
+        minIndex = i
+    temp = tabList[border]
+    tabList[border] = tabList[minIndex]
+    tabList[minIndex] = temp
+    border = border + 1
 
 
 def openTab():
@@ -41,7 +38,7 @@ def openTab():
     title = input("Enter the title of the website: ")
     url = input("Enter the URL of the website: ")
     if title.strip() and url.strip():
-      
+
       tab = {"Title": title, "URL": url, "Content": "", "Nested Tabs": []}
       tabList.append(tab)
 
@@ -58,33 +55,31 @@ def closeTab():
     return
 
   index = int(input("Enter the index of the tab to close: "))
-  if index >= 0 or index <= len(tabList)-1:
+  if index >= 0 or index <= len(tabList) - 1:
     tabList.pop(index)
     print("Tab closed successfully.")
   else:
     print("Invalid index.")
 
 
-
 def switchTab():
   index = int(input("Enter the index of the tab to display: "))
   if len(tabList) == 0:
-      print("No tabs to display.")
-      return
+    print("No tabs to display.")
+    return
+
   elif index > 0 or index <= len(tabList):
     r = requests.get(tabList[index]["URL"])
     print(r.content)
     soup = BeautifulSoup(r.text, 'html.parser')
-    tabList[index]['content']=str(soup)
-  elif index == "" :
-    r = requests.get(tabList[len(tabList)-1]["URL"])
+    tabList[index]['content'] = str(soup)
+  elif index == "":
+    r = requests.get(tabList[len(tabList) - 1]["URL"])
     print(r.content)
     soup = BeautifulSoup(r.text, 'html.parser')
-    tabList[index]['content']=str(soup)
+    tabList[index]['content'] = str(soup)
   else:
     print("The inex you entered in sout of range!")
-
-
 
 
 def displayAllTabs():
@@ -94,25 +89,25 @@ def displayAllTabs():
   for tab in tabList:
     print(tab['Title'])
     for nested in tab['Nested Tabs']:
-        print("--" + nested['Title'])
-
+      print("--" + nested['Title'])
 
 
 def openNestedTabs():
-  index = int(input("Enter the index of the tab you want to add a nested tab to it: "))
-  if 0 <= index <= len(tabList)-1:
-      title = input("Enter the title: ")
-      url = input("Enter the URL: ")
-      nested = {"Title": title, "URL": url}
-      tabList[index]["Nested Tabs"].append(nested)
-      print("Nested tab added successfully.")
+  index = int(
+      input("Enter the index of the tab you want to add a nested tab to it: "))
+  if 0 <= index <= len(tabList) - 1:
+    title = input("Enter the title: ")
+    url = input("Enter the URL: ")
+    nested = {"Title": title, "URL": url}
+    tabList[index]["Nested Tabs"].append(nested)
+    print("Nested tab added successfully.")
   else:
-      print("Invalid tab index.")
+    print("Invalid tab index.")
+
 
 def sortAllTabs():
   selectionSort()
-  print(tabList)    
-
+  print(tabList)
 
 
 def saveTabs():
@@ -143,7 +138,6 @@ def importTabs():
   f.seek(0)
   tabList = json.load(f)
 
-
 while True:
   menu()
   choice = input("Enter your choice: ")
@@ -164,7 +158,7 @@ while True:
   elif choice == "8":
     importTabs()
   elif choice == "9":
-    print("Existing program. Goodbye!")
+    print("Exiting program. Goodbye!")
     break
   else:
     print("Invalid choice. Please try again.")
