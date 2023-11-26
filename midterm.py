@@ -108,10 +108,21 @@ def saveTabs():
   if len(tabList) == 0:
     print("No tabs to save.")
     return
+
   path = str(input("Enter the file path to save the tabs in it: "))
-  with open(path, 'w') as f:
-    json.dump(tabList, f, indent= 2)
-  print("Saved!")
+  exists = os.path.exists(path)
+  if not exists:
+    mode = 'x'
+    print("Creating a new file.")
+  elif exists and input(
+      "File already exists.overwrite it? (y/n): ").lower() == 'y':
+    mode = 'w'
+  else:
+    mode = 'a'
+    print("Appending to the existing file.")
+  with open(path, mode) as f:
+    json.dump(tabList, f, indent=2)
+  print("Saved successfully!")
 
 
 while True:
