@@ -84,3 +84,16 @@ def switchTab():
     tabList[index]['content']=str(soup)
   else:
     print("The inex you entered in sout of range!")
+
+
+
+
+def displayAllTabs():
+  if len(tabList) == 0:
+    print("No tabs to display.")
+    return
+  for tab in tabList:
+    print(tab["Title"])
+    for nested in tab['Nested Tabs']:
+        print("--" + nested['Title'])
+
