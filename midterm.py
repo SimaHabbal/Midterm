@@ -127,7 +127,16 @@ def sortAllTabs():  #O(n^2) since it uses selectionSort()
   selectionSort()
   print(tabList)
 
-
+#saveTabs was a bit challenging
+#i learned and used from w3schools the link is below
+#https://www.w3schools.com/python/python_file_remove.asp
+#first i checked if the list in empty
+#the user entered the path, using the function from w3schools i checked 
+#if the path exists, if it doesnt exist it creats a new on eusing x
+#if it exists but the user wants to overwrite it we use w
+#if it exists and the user doesnt want to overwrite then it appends using a
+#we open the path as file and put it in it as json
+#this was the most challenging part, but it was fairly solvable haha
 def saveTabs(): #O(n) where n is the number of elements in the list
   if len(tabList) == 0:
     print("No tabs to save.")
