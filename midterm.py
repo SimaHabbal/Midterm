@@ -60,7 +60,10 @@ def closeTab(): #O(n) number of elements in list
     return
 
   index = int(input("Enter the index of the tab to close: "))
-  if index >= 0 or index <= len(tabList) - 1:
+  if index.strip()=='':
+    tabList().pop
+    print("the last tab closed successfully.")
+  elif index >= 0 and index <= len(tabList) - 1:
     tabList.pop(index)
     print("Tab closed successfully.")
   else:
