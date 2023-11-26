@@ -49,7 +49,7 @@ def openTab(): # O(1) user inputs are both constants
       print("Title and URl cannot be empty. Please try again.")
 
 
-def closeTab():
+def closeTab(): #O(n) number of elements in list
   if len(tabList) == 0:
     print("No tabs to close.")
     return
@@ -62,7 +62,7 @@ def closeTab():
     print("Invalid index.")
 
 
-def switchTab():
+def switchTab(): #O(1) the request to get html content from url
   index = int(input("Enter the index of the tab to display: "))
   if len(tabList) == 0:
     print("No tabs to display.")
