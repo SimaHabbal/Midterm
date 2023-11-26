@@ -157,7 +157,13 @@ def saveTabs(): #O(n) where n is the number of elements in the list
     json.dump(tabList, f, indent=2)
   print("Saved successfully!")
 
-
+#the user enters the path
+#ive learnt this from w3schools, the link is below
+#open() is used to open a file in a certain way
+#i used it here to open path and just read it, nothing more is allowed
+#after that we print it, and then we put the cursor from the start seek(0) since
+# the program just left the txt file read with the cursor at the end
+#then we load to the list from file, from being json then list
 def importTabs(): # O(n) the content reads content of file and loads it
   path = str(input("Enter the file path to import the tabs from it: "))
   f = open(path, "r")
