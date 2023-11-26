@@ -82,7 +82,7 @@ def switchTab(): #O(1) the request to get html content from url
     print("The inex you entered in sout of range!")
 
 
-def displayAllTabs():
+def displayAllTabs(): #O(n) where n is tabs elements in list
   if len(tabList) == 0:
     print("No tabs to display.")
     return
@@ -92,7 +92,7 @@ def displayAllTabs():
       print("--" + nested['Title'])
 
 
-def openNestedTabs():
+def openNestedTabs(): #O(1)
   index = int(
       input("Enter the index of the tab you want to add a nested tab to it: "))
   if 0 <= index <= len(tabList) - 1:
@@ -105,12 +105,12 @@ def openNestedTabs():
     print("Invalid tab index.")
 
 
-def sortAllTabs():
+def sortAllTabs():  #O(n^2) since it uses selectionSort()
   selectionSort()
   print(tabList)
 
 
-def saveTabs():
+def saveTabs(): #O(n) where n is the number of elements in the list
   if len(tabList) == 0:
     print("No tabs to save.")
     return
