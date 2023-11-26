@@ -42,7 +42,7 @@ def openTab():
     url = input("Enter the URL of the website: ")
     if title.strip() and url.strip():
       
-      tab = {"Title": title, "URL": url, "Nested Tabs": []}
+      tab = {"Title": title, "URL": url, "Content": "", "Nested Tabs": []}
       tabList.append(tab)
 
       current_index = len(tabList) - 1
