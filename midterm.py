@@ -93,7 +93,7 @@ def displayAllTabs():
     print("No tabs to display.")
     return
   for tab in tabList:
-    print(tab["Title"])
+    print(tab['Title'])
     for nested in tab['Nested Tabs']:
         print("--" + nested['Title'])
 
