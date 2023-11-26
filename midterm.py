@@ -97,7 +97,6 @@ def switchTab(): #O(1) the request to get html content from url
 #using a for loop i printed the title of all the tabs in tablist
 #also ive learned that i should use '' instead of "" 
 #i didnt really know before that there is a difference
-
 def displayAllTabs(): #O(n) where n is tabs elements in list
   if len(tabList) == 0:
     print("No tabs to display.")
@@ -107,7 +106,9 @@ def displayAllTabs(): #O(n) where n is tabs elements in list
     for nested in tab['Nested Tabs']:
       print("--" + nested['Title'])
 
-
+#the program reads only index to nest a spesific tab
+#the title must be a string
+#we append the nested into a specific tab in tablist
 def openNestedTabs(): #O(1)
   index = int(
       input("Enter the index of the tab you want to add a nested tab to it: "))
@@ -120,7 +121,8 @@ def openNestedTabs(): #O(1)
   else:
     print("Invalid tab index.")
 
-
+#we called the slectionsort function we learned and wrote in the beginning of the program
+#then print all the list
 def sortAllTabs():  #O(n^2) since it uses selectionSort()
   selectionSort()
   print(tabList)
