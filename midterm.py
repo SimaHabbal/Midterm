@@ -37,9 +37,9 @@ def selectionSort(): #O(n^2) n is the number of elements in list + it is nested
 
 def openTab(): # O(1) user inputs are both constants
   while True:
-    title = input("Enter the title of the website: ")
+    title = str(input("Enter the title of the website: "))
     url = input("Enter the URL of the website: ")
-    if title.strip() and url.strip():
+    if title.strip() and title.isalpha() and url.strip():
 
       tab = {"Title": title, "URL": url, "Content": "", "Nested Tabs": []}
       tabList.append(tab)
@@ -104,7 +104,7 @@ def openNestedTabs(): #O(1)
   index = int(
       input("Enter the index of the tab you want to add a nested tab to it: "))
   if 0 <= index <= len(tabList) - 1:
-    title = input("Enter the title: ")
+    title = str(input("Enter the title: "))
     url = input("Enter the URL: ")
     nested = {"Title": title, "URL": url}
     tabList[index]["Nested Tabs"].append(nested)
