@@ -19,8 +19,8 @@ def menu():
   print("8. Import Tabs")
   print("9. Exit")
 
-
-def selectionSort(): #O(n^2) n is the number of elements in list
+#i used the selectionSort function you taught us
+def selectionSort(): #O(n^2) n is the number of elements in list + it is nested
   border = 0
   while border < len(tabList) - 1:
     minIndex = border
@@ -32,6 +32,8 @@ def selectionSort(): #O(n^2) n is the number of elements in list
     tabList[minIndex] = temp
     border = border + 1
 
+#we take the title and url parameters from user
+#then save them in a tabList list using a built in function append
 
 def openTab(): # O(1) user inputs are both constants
   while True:
@@ -48,7 +50,10 @@ def openTab(): # O(1) user inputs are both constants
     else:
       print("Title and URl cannot be empty. Please try again.")
 
-
+#we check if the list is not empty
+#then we take the index which should be integer from the user
+#if the index is in the range we use pop(a built in function to delete item from list)
+#if the index is larger or smaller the program prints invalid
 def closeTab(): #O(n) number of elements in list
   if len(tabList) == 0:
     print("No tabs to close.")
@@ -131,7 +136,7 @@ def saveTabs(): #O(n) where n is the number of elements in the list
   print("Saved successfully!")
 
 
-def importTabs():
+def importTabs(): # O(n) the content reads content of file and loads it
   path = str(input("Enter the file path to import the tabs from it: "))
   f = open(path, "r")
   print(f.read())
