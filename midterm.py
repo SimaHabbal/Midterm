@@ -94,6 +94,9 @@ def switchTab(): #O(1) the request to get html content from url
   else:
     print("The inex you entered in sout of range!")
 
+#using a for loop i printed the title of all the tabs in tablist
+#also ive learned that i should use '' instead of "" 
+#i didnt really know before that there is a difference
 
 def displayAllTabs(): #O(n) where n is tabs elements in list
   if len(tabList) == 0:
