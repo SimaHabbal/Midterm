@@ -24,30 +24,6 @@ def selectionSort():
     border=border+1
 
 
-while True:
-  menu()
-  choice = input("Enter your choice: ")
-  if choice == "1":
-    openTab()
-  elif choice == "2":
-    closeTab()
-  elif choice == "3":
-    switchTab()
-  elif choice == "4":
-    displayAllTabs()
-  elif choice == "5":
-    openNestedTabs()
-  elif choice == "6":
-    sortAllTabs()
-  elif choice == "7":
-    saveTabs()
-  elif choice == "8":
-    importTabs()
-  elif choice == "9":
-    print("Existing program. Goodbye!")
-    break
-  else:
-    print("Invalid choice. Please try again.")
 
 def openTab():
   while True:
@@ -122,5 +98,31 @@ def openNestedTabs():
   else:
       print("Invalid tab index.")
 
-    
+def sortAllTabs():
+  selectionSort()
+  print(tabList)    
 
+while True:
+  menu()
+  choice = input("Enter your choice: ")
+  if choice == "1":
+    openTab()
+  elif choice == "2":
+    closeTab()
+  elif choice == "3":
+    switchTab()
+  elif choice == "4":
+    displayAllTabs()
+  elif choice == "5":
+    openNestedTabs()
+  elif choice == "6":
+    sortAllTabs()
+  elif choice == "7":
+    saveTabs()
+  elif choice == "8":
+    importTabs()
+  elif choice == "9":
+    print("Existing program. Goodbye!")
+    break
+  else:
+    print("Invalid choice. Please try again.")
