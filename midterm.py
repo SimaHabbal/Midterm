@@ -136,6 +136,12 @@ def saveTabs():
   print("Saved successfully!")
 
 
+def importTabs():
+  path = str(input("Enter the file path to import the tabs from it: "))
+  f = open(path, "r")
+  print(f.read())
+  f.seek(0)
+  tabList = json.load(f)
 
 
 while True:
