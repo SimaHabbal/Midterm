@@ -72,4 +72,15 @@ def switchTab():
   if len(tabList) == 0:
       print("No tabs to display.")
       return
-  
+  elif index > 0 or index <= len(tabList):
+    r = requests.get(tabList[index]["URL"])
+    print(r.content)
+    soup = BeautifulSoup(r.text, 'html.parser')
+    tabList[index]['content']=str(soup)
+  elif index == "" :
+    r = requests.get(tabList[len(tabList)-1]["URL"])
+    print(r.content)
+    soup = BeautifulSoup(r.text, 'html.parser')
+    tabList[index]['content']=str(soup)
+  else:
+    print("The inex you entered in sout of range!")
