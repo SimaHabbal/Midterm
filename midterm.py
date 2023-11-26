@@ -102,6 +102,18 @@ def sortAllTabs():
   selectionSort()
   print(tabList)    
 
+
+
+def saveTabs():
+  if len(tabList) == 0:
+    print("No tabs to save.")
+    return
+  path = str(input("Enter the file path to save the tabs in it: "))
+  with open(path, 'w') as f:
+    json.dump(tabList, f, indent= 2)
+  print("Saved!")
+
+
 while True:
   menu()
   choice = input("Enter your choice: ")
