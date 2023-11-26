@@ -36,3 +36,18 @@ while True:
     break
   else:
     print("Invalid choice. Please try again.")
+
+def openTab():
+  while True:
+    title = input("Enter the title of the website: ")
+    url = input("Enter the URL of the website: ")
+    if title.strip() and url.strip():
+      
+      tab = {"Title": title, "URL": url, "Nested Tabs": []}
+      tabList.append(tab)
+
+      current_index = len(tabList) - 1
+      print("Tab opened successfully.")
+      break
+    else:
+      print("Title and URl cannot be empty. Please try again.")
