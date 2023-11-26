@@ -33,7 +33,7 @@ def selectionSort(): #O(n^2) n is the number of elements in list
     border = border + 1
 
 
-def openTab():
+def openTab(): # O(1) user inputs are both constants
   while True:
     title = input("Enter the title of the website: ")
     url = input("Enter the URL of the website: ")
