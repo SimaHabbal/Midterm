@@ -137,12 +137,6 @@ def saveTabs():
 
 
 
-def importTabs():
-  path = str(input("Enter the file path to import the tabs from it: "))
-  f = open(path, "r")
-  print(f.read())
-
-
 
 while True:
   menu()
