@@ -69,7 +69,12 @@ def closeTab(): #O(n) number of elements in list
   else:
     print("Invalid index.")
 
-
+#check if tab is not empty
+#using web scraping we display the html of the tab with index the user chose
+#if the user didnt enter an index, the last page html is displayed
+#all the html that is displayed is seved in content in the main list
+#i learned and used beutifulsoup from geeksforgeeks from the link is below
+#https://www.geeksforgeeks.org/extract-all-the-urls-from-the-webpage-using-python/
 def switchTab(): #O(1) the request to get html content from url
   index = int(input("Enter the index of the tab to display: "))
   if len(tabList) == 0:
