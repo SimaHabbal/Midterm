@@ -51,3 +51,16 @@ def openTab():
       break
     else:
       print("Title and URl cannot be empty. Please try again.")
+
+
+def closeTab():
+  if len(tabList) == 0:
+    print("No tabs to close.")
+    return
+
+  index = int(input("Enter the index of the tab to close: "))
+  if index >= 0 or index <= len(tabList)-1:
+    tabList.pop(index)
+    print("Tab closed successfully.")
+  else:
+    print("Invalid index.")
