@@ -11,6 +11,18 @@ def menu():
   print("8. Import Tabs")
   print("9. Exit")
 
+def selectionSort():
+  border=0
+  while border <len(tabList)-1:
+    minIndex=border 
+    for i in range(border+1, len(tabList)):
+      if tabList[i]['Title'].lower()<tabList[minIndex]['Title'].lower():
+        minIndex=i
+    temp=tabList[border]
+    tabList[border]=tabList[minIndex]
+    tabList[minIndex]=temp
+    border=border+1
+
 
 while True:
   menu()
@@ -109,3 +121,6 @@ def openNestedTabs():
       print("Nested tab added successfully.")
   else:
       print("Invalid tab index.")
+
+    
+
